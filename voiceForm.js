@@ -1,6 +1,3 @@
-//version 2024-05-24
-
-
 // voiceForm.js
 function startListening() {
     // Check if the browser supports the Web Speech API
@@ -34,6 +31,7 @@ function startListening() {
 function processVoiceCommand(command) {
     const nameField = document.getElementById('name');
     const emailField = document.getElementById('email');
+    const noticeField = document.getElementById('notice');
 
     if (command.includes('name')) {
         const name = command.replace('name', '').trim();
@@ -41,8 +39,10 @@ function processVoiceCommand(command) {
     } else if (command.includes('email')) {
         const email = command.replace('email', '').trim();
         emailField.value = email;
+    } else if (command.includes('notice')) {
+        const notice = command.replace('notice', '').trim();
+        noticeField.value = notice;
     } else {
         console.log("Command not recognized:", command);
     }
 }
-	
